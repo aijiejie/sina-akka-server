@@ -1,0 +1,20 @@
+Error:Error while importing SBT project:<br/>...<br/><pre>[warn] 	* com.google.guava:guava:14.0.1 is selected over 11.0.2
+[warn] 	    +- org.apache.curator:curator-recipes:2.4.0           (depends on 14.0.1)
+[warn] 	    +- org.apache.curator:curator-client:2.4.0            (depends on 14.0.1)
+[warn] 	    +- org.apache.curator:curator-framework:2.4.0         (depends on 14.0.1)
+[warn] 	    +- org.apache.hadoop:hadoop-hdfs:2.2.0                (depends on 11.0.2)
+[warn] 	    +- org.apache.hadoop:hadoop-common:2.2.0              (depends on 11.0.2)
+[warn]
+[warn] 	* io.netty:netty:3.10.6.Final is selected over 3.8.0.Final
+[warn] 	    +- com.typesafe.akka:akka-remote_2.12:2.5.0           (depends on 3.10.6.Final)
+[warn] 	    +- org.apache.spark:spark-core_2.11:2.0.2             (depends on 3.8.0.Final)
+[warn]
+[warn] Run 'evicted' to see detailed eviction warnings
+[error] Modules were resolved with conflicting cross-version suffixes in {file:/C:/Users/%E5%B0%91%E8%BE%89/Desktop/%E6%96%B0%E6%B5%AA%E5%AE%9E%E4%B9%A0/serverActor/}serveractor:
+[error]    org.scala-lang.modules:scala-parser-combinators _2.12, _2.11
+[trace] Stack trace suppressed: run 'last *:ssExtractDependencies' for the full output.
+[trace] Stack trace suppressed: run 'last *:update' for the full output.
+[error] (*:ssExtractDependencies) Conflicting cross-version suffixes in: org.scala-lang.modules:scala-parser-combinators
+[error] (*:update) Conflicting cross-version suffixes in: org.scala-lang.modules:scala-parser-combinators
+[error] Total time: 19 s, completed 2017-8-8 11:50:41
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=384M; support was removed in 8.0</pre><br/>See complete log in <a href="file:/C:/Users/少辉/.IntelliJIdea2017.2/system/log/sbt.last.log">file:/C:/Users/少辉/.IntelliJIdea2017.2/system/log/sbt.last.log</a>

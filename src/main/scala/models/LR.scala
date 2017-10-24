@@ -16,9 +16,9 @@ object LR {
   def lr(lrMasterHost: String, lrMasterPort: String, lrTrainDataPath: String,
          lrPredictDataPath: String, lrModelResultPath:String,lrPredictResultPath: String, lrName: String,
          numIterations: Int) ={
-    //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("spark://master:7077")//集群模式
-    val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("yarn-client")//yarn模式
-    //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("local")//本地模式
+    //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("spark://master:7077")//.setJars(Seq("/home/hadoop/spark-app/app-jar/play/serverActor-assembly-2.6.jar")).set("fs.defaultFS", "hdfs://master:8020")//集群模式java -jar提交
+    //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("yarn-client")//yarn模式
+    val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("local")//本地模式
     val sc = new SparkContext(conf)
 
     // $example on$
@@ -58,6 +58,8 @@ object LR {
       }
       //集群模式删除已存在模型
       val hadoopConf = sc.hadoopConfiguration
+      hadoopConf.addResource(new Path("core-site.xml"))
+      hadoopConf.addResource(new Path("hdfs-site.xml"))
       val hdfs = org.apache.hadoop.fs.FileSystem.get(hadoopConf)
       val path = new Path(lrModelResultPath)
       if (hdfs.exists(path)) {

@@ -13,8 +13,8 @@ object DecisionTreeRegression {
   def  decisionTreeRegression(DTRMasterHost: String, DTRMasterPort: String, dtrTrainDataPath: String,predictDataPath:String,
                               modelResultPath: String,predictResultPath:String, DTRName: String,
                               impurity: String, maxDepth: Int, maxBins:Int) ={
-    //val conf = new SparkConf().setAppName("decisionTreeRegression-" + DTRName").setMaster("spark://master:7077")//集群模式
-    //val conf = new SparkConf().setAppName("decisionTreeRegression-" + DTRName").setMaster("yarn-client")//yarn模式
+    //val conf = new SparkConf().setAppName("decisionTreeRegression-" + DTRName).setMaster("spark://master:7077")//.setJars(Seq("/home/hadoop/spark-app/app-jar/play/serverActor-assembly-2.6.jar"))//集群模式
+    //val conf = new SparkConf().setAppName("decisionTreeRegression-" + DTRName).setMaster("yarn-client")//yarn模式
     val conf = new SparkConf().setAppName("decisionTreeRegression-" + DTRName).setMaster("local")//本地模式
     val sc = new SparkContext(conf)
     val data = MLUtils.loadLibSVMFile(sc, dtrTrainDataPath)

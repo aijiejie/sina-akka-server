@@ -16,10 +16,11 @@ object LinerRegression {
                       linerRPredictDataPath: String, linerRModelResultPath: String, linerRPredictResultPath: String,
                       linerRName: String, numIterations: Int, delimiter:String, stepSize:BigDecimal) = {
 
-    //val conf = new SparkConf().setAppName("LinerRegression-" + lineRName).setMaster("spark://master:7077")//集群模式
+    //val conf = new SparkConf().setAppName("LinerRegression-" + linerRName).setMaster("spark://master:7077")//.setJars(Seq("/home/hadoop/spark-app/app-jar/play/serverActor-assembly-2.6.jar"))//集群模式
     //val conf = new SparkConf().setAppName("LinerRegression-" + linrRName).setMaster("yarn-client")//yarn模式
     val conf = new SparkConf().setAppName("LinerRegression-" + linerRName).setMaster("local")//本地模式
     val sc = new SparkContext(conf)
+
     val data = sc.textFile(linerRTrainDataPath)
     val parsedData = data.map { line =>
       val parts = line.split(delimiter)

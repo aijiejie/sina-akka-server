@@ -43,14 +43,14 @@ class Supervisor extends Actor {
 class AlsActor extends Actor{
   override def receive: Receive = {
     case DTTask(masterHost, masterPort,dtTrainDataPath, dataPath, modelResultPath, resultPath,numClasses, name, impurity, maxDepth,maxBins ,delimiter) => {
-      sender ! "收到决策树任务"
+      sender() ! "收到决策树任务"
       /*下面的函数调用以后要改用子actor实现，与主actor隔离，并实行监控，
       一旦spark任务出错，可以想办法用父actor来结束子actor的spark任务*/
       import scala.concurrent.ExecutionContext.Implicits.global
       context.system.scheduler.schedule(5.minutes,0.seconds,self,"kill")
       val result = DecisonTree.decisonTree(dtTrainDataPath, dataPath, name,
       delimiter, numClasses, modelResultPath, resultPath, impurity, maxDepth, maxBins)
-      sender ! DTTaskResult(modelResultPath, result.toString, resultPath)
+      sender() ! DTTaskResult(modelResultPath, result.toString, resultPath)
     }
 
 

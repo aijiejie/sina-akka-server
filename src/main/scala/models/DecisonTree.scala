@@ -1,6 +1,7 @@
 package models
 
 import java.io.File
+import java.net.URI
 
 import actors.RFTaskResult
 import org.apache.hadoop.fs.Path
@@ -12,17 +13,18 @@ import org.apache.spark.mllib.tree.DecisionTree
 import org.apache.spark.mllib.tree.model.{DecisionTreeModel, Node}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
+import actors.SeverActor._
 
 object DecisonTree {
 
   Logger.getLogger("org").setLevel(Level.ERROR)
-
   def decisonTree(dtTrainDataPath: String, dataPath: String, name: String, delimiter: String, numClasses: Int, modelResultPath: String,
                   resultPath: String, impurity: String, maxDepth: Int, maxBins: Int): String = {
-    //val conf = new SparkConf().setAppName("DecisionTree-" + name).setMaster("spark://master:7077")//集群模式
+    //val conf = new SparkConf().setAppName("DecisionTree-" + name).setMaster("spark://master:7077")//.setJars(Seq("/home/hadoop/spark-app/app-jar/play/serverActor-assembly-2.6.jar"))//集群模式
     //val conf = new SparkConf().setAppName("DecisionTree-" + name).setMaster("yarn-client")//yarn模式
-    val conf = new SparkConf().setAppName("DecisionTree-" + name).setMaster("local")//本地模式
-    val sc = new SparkContext(conf)
+    //val conf = new SparkConf().setAppName("DecisionTree-" + name).setMaster("local")//本地模式
+    conf.setAppName(name)
+    //val sc = new SparkContext(conf)
     val rawData = sc.textFile(dtTrainDataPath)
     val data = rawData.map { line =>
       val values = line.split(delimiter).map(_.toDouble)
@@ -42,13 +44,17 @@ object DecisonTree {
         if (file.exists()) file.delete()
       }
       //集群模式删除已存在模型
-      val hadoopConf = sc.hadoopConfiguration
-      val hdfs = org.apache.hadoop.fs.FileSystem.get(hadoopConf)
-      val path = new Path(modelResultPath)
-      hdfs.delete(path, true)
+      if(conf.get("spark.master") == "spark://master:7077") {
+        val hadoopConf = sc.hadoopConfiguration
+        val path = new Path(modelResultPath)
+        //val fs = org.apache.hadoop.fs.FileSystem.get(URI.create(modelResultPath), hadoopConf)
+        val hdfs = org.apache.hadoop.fs.FileSystem.get(hadoopConf)
+        hdfs.delete(path, true)
+      }
       //保存模型
-        model.save(sc, modelResultPath)
+      model.save(sc, modelResultPath)
     }
+
     val metrics = getMetrics(model, cvData)
     //用cv集生成度量
     val accuracy = metrics.accuracy //度量在cv集上的总精确度
@@ -63,7 +69,7 @@ object DecisonTree {
       }
       model.predict(predictData).saveAsTextFile(resultPath)
     }
-    sc.stop()
+    //sc.stop()
     result
   }
 

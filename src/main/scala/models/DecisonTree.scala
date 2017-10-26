@@ -3,6 +3,7 @@ package models
 import java.io.File
 import java.net.URI
 
+import Util.Util
 import actors.RFTaskResult
 import org.apache.hadoop.fs.Path
 import org.apache.log4j.{Level, Logger}
@@ -41,7 +42,7 @@ object DecisonTree {
     if (!modelResultPath.isEmpty) {
       if (conf.get("spark.master") == "local") {
         val file = new File(modelResultPath)
-        if (file.exists()) file.delete()
+        if (file.exists()) Util.deleteDir(file)
       }
       //集群模式删除已存在模型
       if(conf.get("spark.master") == "spark://master:7077") {

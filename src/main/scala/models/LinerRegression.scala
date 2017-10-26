@@ -2,6 +2,7 @@ package models
 
 import java.io.File
 
+import Util.Util
 import org.apache.hadoop.fs.Path
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.mllib.linalg.Vectors
@@ -39,7 +40,7 @@ object LinerRegression {
     if (!linerRModelResultPath.isEmpty) {
       if (conf.get("spark.master") == "local") {
         val file = new File(linerRModelResultPath)
-        if (file.exists()) file.delete()
+        if (file.exists()) Util.deleteDir(file)
       }
       //集群模式删除已存在模型
       val hadoopConf = sc.hadoopConfiguration

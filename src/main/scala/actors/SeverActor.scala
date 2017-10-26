@@ -1,5 +1,8 @@
 package actors
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 import akka.actor.{Actor, ActorRef, Props}
 import models._
 import org.apache.log4j.{Level, Logger}
@@ -7,9 +10,10 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 class SeverActor() extends Actor {
   Logger.getLogger("org").setLevel(Level.ERROR)
+  import SeverActor.sdf
 
-  /*下面的函数调用以后要改用子actor实现，与主actor隔离实现并行，并实行监控，
-  一旦spark任务出错，可以想办法用父actor来结束子actor的spark任务*/
+
+  /*下面的函数调用以后要改用子actor实现，与主actor隔离实现并行，并实行监控，一旦spark任务出错，可以想办法用父actor来结束子actor的spark任务*/
   override def receive: Receive = {
     case "connect" => {
       println("have client")
@@ -23,51 +27,68 @@ class SeverActor() extends Actor {
       val result = SeverActor.run(dataPath, name)
       sender() ! TestResult(result)
     }
-
+      //无效字符串
     case _: String => {
       println("无效命令")
     }
 
+
     //Als任务
+    //函数调用改子Actor实现
     case AlsTask(masterHost, masterPort, datapath, dataResultPath, alsRseultNumber, name, rank, iter, delimiter) => {
       sender() ! "收到ALS算法任务"
-      val result = Als.als(datapath, name, dataResultPath, alsRseultNumber, rank, iter, delimiter)
-      if (result) sender() ! "ALS推荐算法任务成功结束"
+      val AlsActor = context.actorOf(Props[AlsActor],"AlsActor" + sdf.format(new Date()))//创建子Actor,加入时间戳
+      AlsActor forward AlsTask(masterHost, masterPort, datapath, dataResultPath, alsRseultNumber, name, rank, iter, delimiter)
+//      val result = Als.als(datapath, name, dataResultPath, alsRseultNumber, rank, iter, delimiter)
+//      if (result) sender() ! "ALS推荐算法任务成功结束"
     }
-      //决策树任务函数调用改akka
+
+
+
+      //决策树任务
+      //函数调用改子actor
     case DTTask(masterHost, masterPort,dtTrainDataPath, dataPath, modelResultPath,
     resultPath,numClasses, name, impurity, maxDepth,maxBins ,delimiter) => {
       //sender() ! "收到决策树任务"
-      val DTActor = context.actorOf(Props[DTActor],"DTActor")//创建子Actor
+      val DTActor = context.actorOf(Props[DTActor],"DTActor"+ sdf.format(new Date()))//创建子Actor，加入时间戳
       DTActor forward DTTask(masterHost, masterPort, dtTrainDataPath, dataPath, modelResultPath, resultPath,
         numClasses, name, impurity, maxDepth, maxBins, delimiter)//转发消息
       //val result = DecisonTree.decisonTree(dtTrainDataPath, dataPath, name, delimiter, numClasses, modelResultPath, resultPath, impurity, maxDepth, maxBins)
       //sender() ! DTTaskResult(modelResultPath, result, resultPath)
     }
-    //随机森林任务函数改akka
+
+
+
+    //随机森林任务
+    //函数调用改子Actor
     case RFTask(masterHost, masterPort, rfTrainData,predictData, modelResult,predictResult,
     numClasses,numTrees ,name,featureSubsetStrategy, impurity, maxDepth,maxBins ,delimiter) => {
-      val RFActor = context.actorOf(Props[RFActor],"RFActor")
+      val RFActor = context.actorOf(Props[RFActor],"RFActor"+ sdf.format(new Date()))//创建子Actor，加入时间戳
       RFActor forward RFTask(masterHost, masterPort, rfTrainData,predictData, modelResult,predictResult,
         numClasses,numTrees ,name,featureSubsetStrategy, impurity, maxDepth,maxBins ,delimiter)
 //      sender() ! "收到随机森林任务"
 //      val result = RandomForest.randomForest(rfTrainData, predictData, name,featureSubsetStrategy, delimiter, numClasses,numTrees, modelResult, predictResult, impurity, maxDepth, maxBins)
 //      sender() ! RFTaskResult(modelResult,result.toString,predictResult)
     }
-      //SVM任务函数调用改akka
+
+
+      //SVM任务
+      //函数调用改子Actor
     case SvmTask(svmMasterHost,svmMasterPort,svmTrainDataPath,
     svmPredictDataPath,svmModelResultPath,svmPredictResultPath,
     name,iter) =>{
-      val svmActor = context.actorOf(Props[SvmActor],"svmActor")//创建子Actor
+      val svmActor = context.actorOf(Props[SvmActor],"svmActor"+ sdf.format(new Date()))//创建子Actor,加入时间戳
       svmActor forward SvmTask(svmMasterHost, svmMasterPort, svmTrainDataPath,
         svmPredictDataPath, svmModelResultPath, svmPredictResultPath,
         name, iter)//转发消息
-      //sender() ! "收到SVM任务"
-      //      val result =SVM.svm(svmMasterHost,svmMasterPort,svmTrainDataPath,
+//      sender() ! "收到SVM任务"
+//            val result =SVM.svm(svmMasterHost,svmMasterPort,svmTrainDataPath,
 //        svmPredictDataPath,svmModelResultPath,svmPredictResultPath,
 //        name,iter)
-      //sender() ! SvmTaskResult(result,svmModelResultPath,svmPredictResultPath)
+//      sender() ! SvmTaskResult(result,svmModelResultPath,svmPredictResultPath)
     }
+
+
       //LR任务
     case LRTask(lrMasterHost,lrMasterPort,lrTrainDataPath,
     lrPredictDataPath,lrModelResultPath,lrPredictResultPath,
@@ -78,6 +99,9 @@ class SeverActor() extends Actor {
         name,iter)
       sender() ! LRTaskResult(result,lrModelResultPath,lrPredictResultPath)
     }
+
+
+
     //决策树回归任务
     case DTRTask(masterHost, masterPort, dtTrainData, predictData, modelResult, result
     , name, impurity, maxDepth, maxBins) => {
@@ -87,6 +111,9 @@ class SeverActor() extends Actor {
         , name, impurity, maxDepth, maxBins)
       sender() ! DTRTaskResult(modelResult, testMSE.toString, result)
     }
+
+
+
       //线性回归任务
     case LinerRegressionTask(linerRMasterHost, linerRMasterPort, linerRTrainDataPath,
     linerRPredictDataPath, linerRModelResultPath, linerRPredictResultPath,
@@ -100,7 +127,11 @@ class SeverActor() extends Actor {
   }
 }
 
+
+
 object SeverActor {
+  var sdf = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss")//设置日期格式
+
   var serverActor: ActorRef = _
   //将sparkContext设为全局变量
   val conf: SparkConf = new SparkConf().setMaster("local").setAppName("ML").set("spark.scheduler.mode", "FAIR")

@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8465e9ff-bafe-409a-9064-4d0d4bc556b9" name="Default" comment="实现Als算法并行化&#10;任务名添加时间戳&#10;新建工具类,添加并改进本地文件夹删除函数">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/AlsActor$$anonfun$receive$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/AlsActor$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/Supervisor$$anonfun$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/Supervisor$$anonfun$receive$1$$anonfun$applyOrElse$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/Supervisor$$anonfun$receive$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/Supervisor.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/actors/AlsActor.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/actors/AlsActor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisionTreeRegression$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisionTreeRegression$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisionTreeRegression$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisionTreeRegression$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisionTreeRegression$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisionTreeRegression$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$1$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$1$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$3$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$3$$anonfun$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$$anonfun$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/DecisonTree$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LR$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LR$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LR$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LR$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$1$$anonfun$apply$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/LinerRegression$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$1$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$1$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$3$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$3$$anonfun$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$$anonfun$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/RandomForest$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/SVM$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/SVM$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/SVM$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/SVM$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/SVM$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/SVM$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Supervisor.scala" afterPath="$PROJECT_DIR$/src/main/scala/Supervisor.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/actors/SeverActor.scala" afterPath="$PROJECT_DIR$/src/main/scala/actors/SeverActor.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/Als.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/Als.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/DecisionTreeRegression.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/DecisionTreeRegression.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/DecisonTree.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/DecisonTree.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/LR.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/LR.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/LinerRegression.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/LinerRegression.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/RandomForest.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/RandomForest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/models/SVM.scala" afterPath="$PROJECT_DIR$/src/main/scala/models/SVM.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +59,7 @@
       <file leaf-file-name="SeverActor.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/actors/SeverActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2860">
+            <state relative-caret-position="2992">
               <caret line="136" column="6" lean-forward="false" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
               <folding>
                 <element signature="e#16#49#0" expanded="true" />
@@ -112,7 +71,7 @@
       <file leaf-file-name="AlsActor.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/actors/AlsActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state relative-caret-position="110">
               <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#16#39#0" expanded="true" />
@@ -124,7 +83,7 @@
       <file leaf-file-name="Als.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/models/Als.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
+            <state relative-caret-position="990">
               <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
               <folding>
                 <element signature="e#16#35#0" expanded="true" />
@@ -136,8 +95,8 @@
       <file leaf-file-name="DecisonTree.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/models/DecisonTree.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="44" column="47" lean-forward="false" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
+            <state relative-caret-position="198">
+              <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding>
                 <element signature="e#16#35#0" expanded="true" />
               </folding>
@@ -216,6 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -274,9 +234,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,7 +401,8 @@
       <workItem from="1508830759117" duration="960000" />
       <workItem from="1508831735683" duration="15000" />
       <workItem from="1508982806026" duration="12055000" />
-      <workItem from="1509009723927" duration="235000" />
+      <workItem from="1509009723927" duration="588000" />
+      <workItem from="1509010322566" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="akka服务器并行模式分支初始化">
       <created>1508831291630</created>
@@ -465,11 +425,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508837556209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="实现Als算法并行化&#10;任务名添加时间戳&#10;新建工具类,添加并改进本地文件夹删除函数">
+      <created>1509009980765</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1509009980765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14780000" />
+    <option name="totallyTimeSpent" value="15156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="753" extended-state="6" />
@@ -486,16 +453,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32792208" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -504,6 +470,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -552,6 +519,34 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/models/Als.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+          <folding>
+            <element signature="e#16#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Util/Util.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/models/DecisonTree.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding>
+            <element signature="e#16#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -750,7 +745,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/actors/SeverActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2860">
+        <state relative-caret-position="2992">
           <caret line="136" column="6" lean-forward="false" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
           <folding>
             <element signature="e#16#49#0" expanded="true" />
@@ -783,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/actors/AlsActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="110">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#16#39#0" expanded="true" />
@@ -801,7 +796,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/models/Als.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
+        <state relative-caret-position="990">
           <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
           <folding>
             <element signature="e#16#35#0" expanded="true" />
@@ -844,7 +839,7 @@
         <state relative-caret-position="88">
           <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
           <folding>
-            <element signature="e#16#35#0" expanded="true" />
+            <element signature="e#16#35#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -861,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/models/DecisonTree.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="44" column="47" lean-forward="false" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
+        <state relative-caret-position="198">
+          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
           <folding>
             <element signature="e#16#35#0" expanded="true" />
           </folding>

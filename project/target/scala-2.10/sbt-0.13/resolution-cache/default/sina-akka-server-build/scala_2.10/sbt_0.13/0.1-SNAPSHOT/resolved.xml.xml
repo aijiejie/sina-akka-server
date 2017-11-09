@@ -4,7 +4,7 @@
 		module="sina-akka-server-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171024172554"
+		publication="20171109100023"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

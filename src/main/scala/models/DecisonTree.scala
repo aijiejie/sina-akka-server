@@ -1,10 +1,9 @@
 package models
 
 import java.io.File
-import java.net.URI
 
 import Util.Util
-import actors.RFTaskResult
+import actors.SeverActor._
 import org.apache.hadoop.fs.Path
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
@@ -13,8 +12,6 @@ import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.tree.DecisionTree
 import org.apache.spark.mllib.tree.model.{DecisionTreeModel, Node}
 import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkConf, SparkContext}
-import actors.SeverActor._
 
 object DecisonTree {
 

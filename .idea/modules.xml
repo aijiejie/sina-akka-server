@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/akka-play-server.iml" filepath="$PROJECT_DIR$/.idea/akka-play-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/akka-play-server-build.iml" filepath="$PROJECT_DIR$/.idea/modules/akka-play-server-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sina-akka-server.iml" filepath="$PROJECT_DIR$/.idea/modules/sina-akka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sina-akka-server-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sina-akka-server-build.iml" />
     </modules>
   </component>
 </project>

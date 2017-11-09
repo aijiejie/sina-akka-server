@@ -18,18 +18,18 @@ scalaVersion := "2.11.8"
 
 
 /*akka依赖*/
-libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.5.0"
+libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.5.6"
 //libraryDependencies += "com.typesafe.akka" % "akka-actor_2.10" % "2.2.0"
 
 
 
-libraryDependencies += "com.typesafe.akka" % "akka-remote_2.11" % "2.5.0"
+libraryDependencies += "com.typesafe.akka" % "akka-remote_2.11" % "2.5.6"
 //libraryDependencies += "com.typesafe.akka" % "akka-remote_2.10" % "2.2.0"
 
 
 /*spark依赖*/
-libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "2.0.0" //% "provided"
-libraryDependencies += "org.apache.spark" % "spark-mllib_2.11" % "2.0.0" //% "provided"
+libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "2.2.0" //% "provided"
+libraryDependencies += "org.apache.spark" % "spark-mllib_2.11" % "2.2.0" //% "provided"
 
 
 //libraryDependencies += "org.apache.spark" % "spark-core_2.10" % "2.0.0"  //% "provided"

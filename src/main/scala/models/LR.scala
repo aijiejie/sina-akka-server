@@ -17,8 +17,8 @@ object LR {
          lrPredictDataPath: String, lrModelResultPath:String,lrPredictResultPath: String, lrName: String,
          numIterations: Int) ={
     //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("spark://master:7077")//集群模式
-    val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("yarn-client")//yarn模式
-    //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("local")//本地模式
+    //val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("yarn-client")//yarn模式
+    val conf = new SparkConf().setAppName("LR-" + lrName).setMaster("local")//本地模式
     val sc = new SparkContext(conf)
 
     // $example on$
